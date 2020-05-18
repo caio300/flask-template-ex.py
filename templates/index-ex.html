@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{titulo}}</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        
+          
+
+        table, th, td {
+            
+            border: 1px solid black;
+            text-align: left;
+            padding: 5px;
+            
+
+        }
+    </style>
+</head>
+<body>
+    <h1>Tabela de preços</h1>
+    <table>
+        <tr>
+            <th>Nome</th>
+            <th>Preço</th>
+        </tr>
+        
+        {% for name, preco in prod %}
+            <tr>
+                <td>{{name}}</td>
+                {% if preco > 5 %}
+                    <td style="color: red;">{{preco}}</td>
+                {% else %}
+                    <td>{{preco}}</td>    
+                {% endif %}
+            </tr>
+        {% endfor %}
+    </table>
+    
+</body>
+</html>
